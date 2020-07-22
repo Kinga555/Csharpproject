@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kalkulator_statystyczny", "kalkulator_statystyczny\kalkulator_statystyczny.csproj", "{12D6EF5A-A24F-401B-9F31-E1F0ED7CB660}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{CBF5B5F0-7738-4D91-8507-AA65E3A508B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12D6EF5A-A24F-401B-9F31-E1F0ED7CB660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D6EF5A-A24F-401B-9F31-E1F0ED7CB660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D6EF5A-A24F-401B-9F31-E1F0ED7CB660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12D6EF5A-A24F-401B-9F31-E1F0ED7CB660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF5B5F0-7738-4D91-8507-AA65E3A508B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF5B5F0-7738-4D91-8507-AA65E3A508B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF5B5F0-7738-4D91-8507-AA65E3A508B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF5B5F0-7738-4D91-8507-AA65E3A508B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44B10A6D-3C9F-4BFD-B52F-F89C45DFFBBE}
+	EndGlobalSection
+EndGlobal

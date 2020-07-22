@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "YRCv/kVjegDFpBf/yZgTlo8SlpvguJhEOiOu8h1n9jlJGQgrolemgKnlrUqZAKpgjAFc72dEEUBMFU2hXGO3OA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Kinga\\Source\\Repos\\kalkulator_statystyczny\\kalkulator_statystyczny\\kalkulator_statystyczny.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kinga\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
