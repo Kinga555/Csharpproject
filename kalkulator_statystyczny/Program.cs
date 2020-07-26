@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary1;
+using System;
 
 namespace kalkulator_statystyczny
 {
@@ -9,58 +10,106 @@ namespace kalkulator_statystyczny
             double b;
             bool c;
 
-            Console.WriteLine("Czy dane podane są w szeregu rozdzielczym? (T)");
+
+
+            Console.WriteLine("Czy dane podane są w szeregu rozdzielczym? (t/n)");
             string kindData = Console.ReadLine();
             Console.WriteLine("Podaj ilośc obserwacji");
             int length = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Wprowadź szereg liczebności odzielając dane spacją");
-
-            string[] x = Console.ReadLine().Split(' ');
-
-            double[] num = new double[x.Length];
-            for (int i = 0; i < x.Length; i++)
+            double[] num = new double[length];
+            double[] dsx = new double[length];
+            double[] dex = new double[length];
+            Console.WriteLine("czy twoje dane zawierają szereg liczebności? (t/n)");
+            string ifNumer = Console.ReadLine();
+            if (ifNumer == "t")
             {
-                c = double.TryParse(x[i], out b);
-                if (c)
+                Console.WriteLine("Wprowadź szereg liczebności odzielając dane spacją");
+
+                string[] x = Console.ReadLine().Split(' ');
+
+
+                for (int i = 0; i < length; i++)
                 {
+                    c = double.TryParse(x[i], out b);
+                    if (c)
+                    {
+                        num[i] = b;
+                    }
+                    else
+                    {
+                        do
+                        {
+                            Console.WriteLine($"Dana na pozycji {i} niezgodna z formatem\n" +
+                                $"Ponownie wczytaj daną");
+                            c = double.TryParse(Console.ReadLine(), out b);
+                        } while (c != true);
+                    }
                     num[i] = b;
                 }
-                else
-                {
-                    do
-                    {
-
-                        Console.WriteLine($"Dana na pozycji {i} niezgodna z formatem\n" +
-                            $"Ponownie wczytaj daną");
-                        c = double.TryParse(Console.ReadLine(), out b);
-                    } while (c != true);
-                }
-                num[i] = b;
             }
 
             Console.WriteLine("Wprowadź szereg  danej x");
             string[] y = Console.ReadLine().Split(' ');
 
-            double[] dsx = new double[y.Length];
 
-            for (int i = 0; i < x.Length; i++)
+
+            for (int i = 0; i < length; i++)
             {
-                c = double.TryParse(x[i], out b);
+                c = double.TryParse(y[i], out b);
                 if (c != true)
                 {
 
                     do
                     {
-
                         Console.WriteLine($"Dana na pozycji {i} niezgodna z formatem\n" +
                             $"Ponownie wczytaj daną");
                         c = double.TryParse(Console.ReadLine(), out b);
                     } while (c != true);
-                    num[i] = b;
+                    dsx[i] = b;
+                }
+            }
+            if (kindData == "t")
+            {
+                Console.WriteLine("Wprowadź szereg końca przedziału danej x");
+                string[] z = Console.ReadLine().Split(' ');
+
+
+
+                for (int i = 0; i < length; i++)
+                {
+                    c = double.TryParse(z[i], out b);
+                    if (c != true)
+                    {
+
+                        do
+                        {
+                            Console.WriteLine($"Dana na pozycji {i} niezgodna z formatem\n" +
+                                $"Ponownie wczytaj daną");
+                            c = double.TryParse(Console.ReadLine(), out b);
+                        } while (c != true);
+                        dex[i] = b;
+                    }
                 }
             }
 
+            if (ifNumer == "t" || kindData != "t")
+            {
+                DataSet ds = new DataSet(num, dsx);
+                double sred = ds.Averange(ds.GetDataList);
+                Console.WriteLine($"Sredna arytmetyczna{ sred}");
+            }
+            else if (ifNumer != "t" || kindData == "t")
+            {
+                DataSet ds = new DataSet(num, dsx);
+                double sred = ds.AverangeW(ds.GetDataList);
+                Console.WriteLine($"Sredna ważona { sred}");
+            }
+            else
+            {
+                DataSet ds = new DataSet(num, dsx, dex);
+                double sred = ds.AverangeW(ds.GetDataList);
+                Console.WriteLine($"Srednia ważona: {sred}");
+            }
 
 
 
